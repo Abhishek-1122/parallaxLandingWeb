@@ -1,64 +1,134 @@
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>snap.io</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-</head>
+*{
+    border: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+ 
+    background: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
 
-<body>
-    <header>
-        <h2 class="logo">SNAP.IO</h2>
-        <nav class="navigation">
-            <a href="#" class="active">Home</a>
-            <a href="#">About</a>
-            <a href="#">Service</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    padding: 30px 100px;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 100;
+}
 
-    <section class="parallax">
+.logo{
+    font-size: 1.5em;
+    color: #359381;
+    pointer-events: none;
+    margin-right: 240px;
+}
+.navigation a{
+    text-decoration: none;
+    color: #359381;
+   padding: 6px 15px; 
+   border-radius: 20px;
+   margin: 0 10px;
+   font-weight:600 ;
+}
+.navigation a:hover,.navigation .active{
+    background: #359381;
+    color:#fff ;
+}
+.parallax{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh ;
+}
 
-        <img  src="images/hill1.png" alt="hill1">
-        <img src="images/hill2.png" alt="hill2">
-        <img src="images/hill3.png" alt="hill3">
-        <img src="images/hill4.png" alt="hill4">
-        <img class="ig1" src="images/tree.png" alt="tree">
-        <img src="images/hill5.png" alt="hill5">
-        <h2 id="text">Capture Life </h2>
-        <img  src="images/leaf.png" alt="leaf">
-        <img class="ig" src="images/plant.png" alt="plant">
-
-    </section>
-
-    <section class="sec">
-        <h2>Photo Editing with AI</h2>
-        <p>
-            At SNAP.IO, we leverage the power of Artificial Intelligence (AI) to take your photo editing experience to the next level. Our AI-driven photo editing services offer unmatched precision and creativity. Here's what you can expect from our AI-powered photo editing:
-        </p>
-        <ul>
-            <li><strong>Enhanced Quality:</strong> Our AI algorithms can enhance the quality of your photos by improving sharpness, color balance, and overall aesthetics.</li>
-            <li><strong>Automatic Retouching:</strong> Say goodbye to manual retouching. Our AI can automatically remove imperfections, blemishes, and unwanted objects from your photos.</li>
-            <li><strong>Style Transfer:</strong> Transform your photos into various artistic styles or replicate the look of famous artists with our AI-powered style transfer feature.</li>
-            <li><strong>Background Removal:</strong> Easily remove backgrounds or replace them with stunning visuals using AI-driven background removal tools.</li>
-            <li><strong>Content Generation:</strong> Need creative content? Our AI can generate captions, taglines, and more to complement your photos.</li>
-        </ul>
-        <p>
-            Whether you're a professional photographer or just someone who loves taking pictures, our AI-driven photo editing services will save you time and help you achieve incredible results. Explore the future of photo editing with SNAP.IO today!
-        </p>
-
-
-        <footer>
-            &copy; 2023 SNAP.IO
-        </footer>
-    </section>
+#text{
+    position:absolute ;
+    font-size: 5em;
     
+    color: #fff ;
+    text-shadow: 2px 2px 4px rgba(0,0,0, .2);
 
-    <script src="script.js" ></script>
-</body>
+}
 
-</html>
+.parallax .ig{
+    z-index: 4;
+}
+.parallax .ig1{
+    z-index: 4;
+    left: 220px;
+}
+
+.parallax img{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   pointer-events: none;
+   
+
+}
+
+.sec{
+    position: relative;
+    z-index: 2;
+    top: 70px;
+    background:#003329;
+    padding: 100px;
+    margin-top: 70px;
+}
+
+.sec h2{
+    font-size: 3em;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.sec p,ul{
+    font-size: 1em;
+    color: #fff;
+    font-weight: 300;
+    margin-bottom: 20 px;
+}
+
+footer {
+    background-color: #003329;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 100px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation a {
+        margin: 10px 0;
+    }
+
+    section.parallax {
+        height: 300px; /* Adjust the height for smaller screens */
+    }
+
+    h2#text {
+        font-size: 24px;
+    }
+
+    section.parallax .ig1,
+    section.parallax .ig {
+        display: none;
+    }
+}
